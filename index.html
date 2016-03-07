@@ -19,9 +19,9 @@
         <h2>java_grammar_note</h2>
 
         <section id="downloads">
-          <a href="https://github.com/yxzoro/java_grammar/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/yxzoro/java_grammar/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/yxzoro/java_grammar" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+          <a href="https://github.com/yxzoro/java/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/yxzoro/java/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/yxzoro/java" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
         </section>
       </div>
     </header>
@@ -29,23 +29,60 @@
     <div class="container">
       <section id="main_content">
         <h3>
+<a id="java全部是类所有属性方法全写在类里面完全面向对象" class="anchor" href="#java%E5%85%A8%E9%83%A8%E6%98%AF%E7%B1%BB%E6%89%80%E6%9C%89%E5%B1%9E%E6%80%A7%E6%96%B9%E6%B3%95%E5%85%A8%E5%86%99%E5%9C%A8%E7%B1%BB%E9%87%8C%E9%9D%A2%E5%AE%8C%E5%85%A8%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>java全部是==&gt;&gt;类,所有[属性+方法]全写在类里面,完全面向对象.</h3>
+
+<h3>
 <a id="java修饰符" class="anchor" href="#java%E4%BF%AE%E9%A5%B0%E7%AC%A6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>java修饰符</h3>
 
-<p>1.类的修饰符</p>
+<p>[撇开java的几个修饰符，java语法写起来也蛮简洁的=&gt;变量+函数+类]</p>
 
-<p>[public/] [] class A {}</p>
+<p>0.一个A.java源文件的名字必须和其中的[有且仅有一个的]public class A{}名字相同,
+  A.java中可以有其他非public的class,</p>
 
-<p>2.类里面属性的修饰符</p>
+<p>1.类的修饰符(没有private,没有static,final的类不准被继承)</p>
+
+<p>[public/abstract/final] class A {}</p>
+
+<p>2.类里面属性的修饰符(final的属性值不准再改变)</p>
 
 <p>[public/private/default/protected] [static] [final] int a = 1;</p>
 
-<p>3.类里面方法的修饰符</p>
+<p>3.类里面方法的修饰符(final的方法不准被子类重写，方法的()和{}都不能省略,方法内部也不能定义方法)</p>
 
 <p>[public/private/default/protected] [static] [final] int/void a(String a,int b){ }</p>
 
-<p>4.类里面方法里面的属性</p>
+<p>4.类里面的构造方法的修饰符(没有返回值,也不写void,正常只写public,)</p>
+
+<p>[public/private/default/protected] A(int a,float b){ }</p>
+
+<p>5.类里面方法里面的属性(没有权限修饰符，没有static)</p>
 
 <p>[final] int a = 1;</p>
+
+<h3>
+<a id="java-数组集合类" class="anchor" href="#java-%E6%95%B0%E7%BB%84%E9%9B%86%E5%90%88%E7%B1%BB" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>java 数组+集合类</h3>
+
+<p>1.数组([数组里只能放相同数据类型]，写法上是int a[] = new int[],只要有方括号则表明了是数组，)</p>
+
+<p>int a = 1; 由单个普通变量写法引申出多个变量集合写法==&gt;&gt;即数组的写法,</p>
+
+<p>int a[] = new int[n]/int[] a = new int[n]; n为数组元素个数，</p>
+
+<p>int a[]/int[] a = {1,2,3,4}; 数组声明顺带赋值,</p>
+
+<p>2.集合类 ArrayList[动态数组] + HashMap<a href="%E5%85%88new%E4%B8%AA%E9%9B%86%E5%90%88%E7%B1%BB%E5%AF%B9%E8%B1%A1%E5%87%BA%E6%9D%A5%EF%BC%8C%E5%86%8D%E5%BE%80%E9%87%8C%E6%94%BE%E4%B8%9C%E8%A5%BF%EF%BC%8C">哈希表</a></p>
+
+<p>ArrayList a = new ArrayList();</p>
+
+<p>a.Add('first element in list');</p>
+
+<p>HashMap b = new HashMap();</p>
+
+<p>b.put("语文" , 80.0);   </p>
+
+<h3>
+<a id="java教程c语言中文网" class="anchor" href="#java%E6%95%99%E7%A8%8Bc%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%96%87%E7%BD%91" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://www.weixueyuan.net/java/rumen/">java教程：C语言中文网</a>
+</h3>
       </section>
     </div>
 
