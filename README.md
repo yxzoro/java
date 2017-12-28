@@ -27,6 +27,7 @@ public class HelloWorld {
     5.所有的Java程序由public static void main(String []args)方法开始执行.
 
 #### 4种访问控制修饰符: default, public , protected, private(python和go通过大小写来控制)
+    修饰符            当前类        同一包内        子孙类       其他包                   
     default: 
     public : 
     protected: 
@@ -123,7 +124,208 @@ Puppy p2 = new Puppy("haha");
     package haha
     import java.io.*;
 
-#### 基本数据类型
+#### 8种基本类型
+*Java语言提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型*
+```java
+byte：  (包装类：java.lang.Byte)
+    byte 数据类型是8位、有符号的，以二进制补码表示的整数；
+    最小值是 -128（-2^7）；
+    最大值是 127（2^7-1）；
+    默认值是 0；
+    byte 类型用在大型数组中节约空间，主要代替整数，因为 byte 变量占用的空间只有 int 类型的四分之一；
+    例子：byte a = 100，byte b = -50。
+short：  (包装类：java.lang.Short)
+    short 数据类型是 16 位、有符号的以二进制补码表示的整数
+    最小值是 -32768（-2^15）；
+    最大值是 32767（2^15 - 1）；
+    Short 数据类型也可以像 byte 那样节省空间。一个short变量是int型变量所占空间的二分之一；
+    默认值是 0；
+    例子：short s = 1000，short r = -20000。
+int：  (包装类：java.lang.Integer)
+    int 数据类型是32位、有符号的以二进制补码表示的整数；
+    最小值是 -2,147,483,648（-2^31）；
+    最大值是 2,147,483,647（2^31 - 1）；
+    一般地整型变量默认为 int 类型；
+    默认值是 0 ；
+    例子：int a = 100000, int b = -200000。
+long：  (包装类：java.lang.Long)
+    long 数据类型是 64 位、有符号的以二进制补码表示的整数；
+    最小值是 -9,223,372,036,854,775,808（-2^63）；
+    最大值是 9,223,372,036,854,775,807（2^63 -1）；
+    这种类型主要使用在需要比较大整数的系统上；
+    默认值是 0L；
+    例子： long a = 100000L，Long b = -200000L。
+    "L"理论上不分大小写，但是若写成"l"容易与数字"1"混淆，不容易分辩。所以最好大写。
+float：  (包装类：java.lang.Float)
+    float 数据类型是单精度、32位、符合IEEE 754标准的浮点数；
+    float 在储存大型浮点数组的时候可节省内存空间；
+    默认值是 0.0f；
+    浮点数不能用来表示精确的值，如货币；
+    例子：float f1 = 234.5f。
+double：  (包装类：java.lang.Double)
+    double 数据类型是双精度、64 位、符合IEEE 754标准的浮点数；
+    浮点数的默认类型为double类型；
+    double类型同样不能表示精确的值，如货币；
+    默认值是 0.0d；
+    例子：double d1 = 123.4。
+boolean：  (包装类：java.lang.Boolean)
+    boolean数据类型表示一位的信息；
+    只有两个取值：true 和 false；
+    这种类型只作为一种标志来记录 true/false 情况；
+    默认值是 false；
+    例子：boolean one = true。
+char：  (包装类：java.lang.Character)
+    char类型是一个单一的 16 位 Unicode 字符；
+    最小值是 \u0000（即为0）；
+    最大值是 \uffff（即为65,535）；
+    char 数据类型可以储存任何字符；
+    例子：char letter = 'A';。
+void:
+实际上，JAVA中还存在另外一种基本类型void，它也有对应的包装类 java.lang.Void，不过我们无法直接对它们进行操作。    
+```
+
+#### 引用数据类型
+```
+在Java中，引用类型的变量非常类似于C/C++的指针。
+引用类型指向一个对象，指向对象的变量是引用变量。这些变量在声明时被指定为一个特定的类型，比如 Employee、Puppy 等。变量一旦声明后，类型就不能被改变了。
+对象、数组都是引用数据类型。
+所有引用类型的默认值都是null。
+一个引用变量可以用来引用任何与之兼容的类型。
+例子：Site site = new Site("Runoob")。
+```
+
+#### Java 常量
+```
+//通常使用大写字母表示常量
+final double PI = 3.1415927;
+```
+
+#### 自动类型转换
+    整型、实型（常量）、字符型数据可以混合运算。运算中，不同类型的数据先转化为同一类型，然后进行运算。
+    转换从低级到高级。
+    byte,short,char—> int —> long—> float —> double 
+
+数据类型转换必须满足如下规则：
+
+    1. 不能对boolean类型进行类型转换。
+    2. 不能把对象类型转换成不相关类的对象。
+    3. 在把容量大的类型转换为容量小的类型时必须使用"强制类型转换"
+    4. 转换过程中可能导致溢出或损失精度，例如：
+        int i =128;   
+        byte b = (byte)i;
+        因为 byte 类型是 8 位，最大值为127，所以当强制转换为 int 类型值 128 时候就会导致溢出。
+    5. 浮点数到整数的转换是通过舍弃小数得到，而不是四舍五入，例如：
+        (int)23.7 == 23;        
+        (int)-45.89f == -45
+
+#### 强制类型转换
+```java
+1. 条件是转换的数据类型必须是兼容的。
+2. 格式：(type)value type是要强制类型转换后的数据类型 实例：
+public class QiangZhiZhuanHuan{
+    public static void main(String[] args){
+        int i1 = 123;
+        byte b = (byte)i1;//强制类型转换为byte
+        System.out.println("int强制类型转换为byte后的值等于"+b);
+    }
+}
+```
+
+#### Java 局部变量
+```java
+//局部变量声明在方法、构造方法或者语句块中；
+//局部变量在方法、构造方法、或者语句块被执行的时候创建，当它们执行完成后，变量将会被销毁；
+//访问修饰符不能用于局部变量；
+//局部变量只在声明它的方法、构造方法或者语句块中可见；
+//局部变量是在栈上分配的。
+//局部变量没有默认值，所以局部变量被声明后，必须经过初始化，才可以使用。
+package com.runoob.test;
+public class Test{ 
+   public void pupAge(){
+      int age = 0;
+      age = age + 7;
+      System.out.println("小狗的年龄是: " + age);
+   }
+   public static void main(String args[]){
+      Test test = new Test();
+      test.pupAge();
+   }
+}
+```
+
+#### 实例变量
+```java
+实例变量声明在一个类中，但在方法、构造方法和语句块之外；
+当一个对象被实例化之后，每个实例变量的值就跟着确定；
+实例变量在对象创建的时候创建，在对象被销毁的时候销毁；
+实例变量的值应该至少被一个方法、构造方法或者语句块引用，使得外部能够通过这些方式获取实例变量信息；
+实例变量可以声明在使用前或者使用后；
+访问修饰符可以修饰实例变量；
+实例变量对于类中的方法、构造方法或者语句块是可见的。一般情况下应该把实例变量设为私有。通过使用访问修饰符可以使实例变量对子类可见；
+实例变量具有默认值。数值型变量的默认值是0，布尔型变量的默认值是false，引用类型变量的默认值是null。变量的值可以在声明时指定，也可以在构造方法中指定；
+实例变量可以直接通过变量名访问。但在静态方法以及其他类中，就应该使用完全限定名：ObejectReference.VariableName。
+import java.io.*;
+public class Employee{
+   // 这个实例变量对子类可见
+   public String name;
+   // 私有变量，仅在该类可见
+   private double salary;
+   public Employee (String empName){
+      name = empName;
+   }
+   public void setSalary(double empSal){
+      salary = empSal;
+   }  
+   public void printEmp(){
+      System.out.println("名字 : " + name );
+      System.out.println("薪水 : " + salary);
+   }
+   public static void main(String args[]){
+      Employee empOne = new Employee("RUNOOB");
+      empOne.setSalary(1000);
+      empOne.printEmp();
+   }
+}
+```
+
+#### 类变量（静态变量）
+```
+类变量也称为静态变量，在类中以static关键字声明，但必须在方法构造方法和语句块之外。
+无论一个类创建了多少个对象，类只拥有类变量的一份拷贝。
+静态变量除了被声明为常量外很少使用。常量是指声明为public/private，final和static类型的变量。常量初始化后不可改变。
+静态变量储存在静态存储区。经常被声明为常量，很少单独使用static声明变量。
+静态变量在程序开始时创建，在程序结束时销毁。
+与实例变量具有相似的可见性。但为了对类的使用者可见，大多数静态变量声明为public类型。
+默认值和实例变量相似。数值型变量默认值是0，布尔型默认值是false，引用类型默认值是null。变量的值可以在声明的时候指定，也可以在构造方法中指定。此外，静态变量还可以在静态语句块中初始化。
+静态变量可以通过：ClassName.VariableName的方式访问。
+类变量被声明为public static final类型时，类变量名称一般建议使用大写字母。如果静态变量不是public和final类型，其命名方式与实例变量以及局部变量的命名方式一致。
+import java.io.*;
+public class Employee {
+    //salary是静态的私有变量
+    private static double salary;
+    // DEPARTMENT是一个常量
+    public static final String DEPARTMENT = "开发人员";
+    public static void main(String args[]){
+    salary = 10000;
+        System.out.println(DEPARTMENT+"平均工资:"+salary);
+    }
+}
+```
+
+#### Java 修饰符
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
