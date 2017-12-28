@@ -28,10 +28,10 @@ public class HelloWorld {
 
 #### 4种访问控制修饰符: default, public , protected, private(python和go通过大小写来控制)
     修饰符            当前类        同一包内        子孙类       其他包                   
-    default: 
-    public : 
-    protected: 
-    private: 
+    default:           y             y              y           y
+    public :           y             y              y           n
+    protected:         y             y              n           n
+    private:           y             n              n           n
 
 #### 一个类可以有以下3种类型的变量:
     1.局部变量：在方法或者语句块中定义的变量被称为局部变量.变量声明和初始化都是在方法中,方法结束后,变量就会自动销毁.
@@ -312,7 +312,12 @@ public class Employee {
 }
 ```
 
-#### Java 修饰符
+#### Java 访问控制修饰符
+    Java中，可以使用访问控制符来保护对类、变量、方法的访问。Javav支持 4 种不同的访问权限。
+        default (即缺省，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。
+        private : 在同一类内可见。使用对象：变量、方法。 注意：不能修饰类（外部类）
+        public : 对所有类可见。使用对象：类、接口、变量、方法
+        protected : 对同一包内的类和所有子类可见。使用对象：变量、方法。 注意：不能修饰类（外部类）。
 
 
 
