@@ -34,12 +34,25 @@ public class HelloWorld {
     4.源文件名必须和类名相同,当保存文件的时候,你应该使用类名作为文件名保存
     5.所有的Java程序由public static void main(String []args)方法开始执行.
 
-#### 4种访问控制修饰符: default, public , protected, private(python和go通过大小写来控制)
+#### 4种访问控制修饰符: default, public , protected, private
     修饰符            当前类        同一包内        子孙类       其他包                   
     default:           y             y              y           y
     public :           y             y              y           n
     protected:         y             y              n           n
     private:           y             n              n           n
+```
+1.java/python/go访问权限对比:
+python通过加__来控制访问权限,go通过大小写来控制访问权限,
+python和go相当于只使用java的public/private这2个访问权限的控制(因为default/protected没必要/基本用不到...)
+其实实际写代码的时候基本也只会用到public/private而已,够使用了已经.
+你想它能被外部访问,就用public,你想它只在class内部私有的变量,就用private,使用场景足以.
+*从这一点上说,Java的4种访问权限控制符就被简化了,变简单了,本来就是简单实用为上!!
+
+2.java/python静态变量/静态方法对比,区分与实例变量/实例方法:
+java在变量/方法前加static修饰符的就是静态变量/静态方法,
+python没有self.的就是静态变量,加@staticmethod装饰器就是静态方法,python还多个@classmethod(没太大意义?)
+(注:java里静态方法就是类方法,python里静态方法和类方法不一样(类方法多了个cls参数))
+```
 
 #### 一个类可以有以下3种类型的变量:
     1.局部变量:在方法或者语句块中定义的变量被称为局部变量.变量声明和初始化都是在方法中,方法结束后,变量就会自动销毁.
