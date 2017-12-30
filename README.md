@@ -5,7 +5,7 @@
       *但二者各有自己的一套语言生态,包含web开发的一系列框架工具等需要去熟悉使用
 -----------------------------------------------------------------------------------------
 
-## 请参考java菜鸟教程
+## 请参考java菜鸟教程...
 [java初级教程还是直接阅读菜鸟教程吧,看熟它先: http://www.runoob.com/java/java-modifier-types.html](http://www.runoob.com/java/java-modifier-types.html)
 
 
@@ -55,6 +55,14 @@ java在变量/方法前加static修饰符的就是静态变量/静态方法,
 python没有self.的就是静态变量,加@staticmethod装饰器就是静态方法,python还多个@classmethod(没太大意义?)
 (注:java里静态方法就是类方法,python里静态方法和类方法不一样(类方法多了个cls参数))
 ```
+```
+java的类(外部类)只有2种访问权限:public/default(就是说类前面要么加public修饰,要么什么都不加)
+java的变量和方法有4种访问权限：public/default/protected/private,常用的2种(public/private)
+```
+```
+java繁杂冗余的语法的那一套东西要去简化它,以简洁实用为目的.kotlin/scala的设计出发点就是为了这个吧...
+```
+
 
 #### 一个类可以有以下3种类型的变量:
     1.局部变量:在方法或者语句块中定义的变量被称为局部变量.变量声明和初始化都是在方法中,方法结束后,变量就会自动销毁.
@@ -544,19 +552,120 @@ public class MyRunnable implements Runnable
 但是以上代码中我们使用了 volatile 修饰 active，所以该循环会停止。
 ```
 
-## TODO:
-[java初级教程直接阅读菜鸟教程吧: http://www.runoob.com/java/java-modifier-types.html](http://www.runoob.com/java/java-modifier-types.html)
+#### 三元运算符 ?:
+```java
+a = 10;
+b = (a == 1) ? 20 : 30;  // 如果 a 等于 1 成立，则设置 b 为 20，否则为 30
+```
 
+#### instanceof 运算符
+```java
+//该运算符用于操作对象实例，检查该对象是否是一个特定类型（类类型或接口类型）。
+Vehicle a = new Car();
+boolean result =  a instanceof Car;
+```
 
+#### 循环判断语句
+```java
+// while
+public class Test {
+   public static void main(String args[]) {
+      int x = 10;
+      while( x < 20 ) {
+         System.out.print("value of x : " + x );
+         x++;
+      }
+   }
+}
 
+// do while
+public class Test {
+   public static void main(String args[]){
+      int x = 10; 
+      do{
+         System.out.print("value of x : " + x );
+         x++;
+         System.out.print("\n");
+      }while( x < 20 );
+   }
+}
 
+// for
+public class Test {
+   public static void main(String args[]) {
+      for(int x = 10; x < 20; x = x+1) {
+         System.out.print("value of x : " + x );
+         System.out.print("\n");
+      }
+   }
+}
 
+// 增强for
+public class Test {
+   public static void main(String args[]){
+      int [] numbers = {10, 20, 30, 40, 50};
+      for(int x : numbers ){
+         System.out.print( x );
+      }
+      String [] names ={"James", "Larry", "Tom", "Lacy"};
+      for( String name : names ) {
+         System.out.print( name );
+      }
+   }
+}
 
+//if else
+public class Test {
+   public static void main(String args[]){
+      int x = 30;
+      if( x == 10 ){
+         System.out.print("Value of X is 10");
+      }else if( x == 20 ){
+         System.out.print("Value of X is 20");
+      }else if( x == 30 ){
+         System.out.print("Value of X is 30");
+      }else{
+         System.out.print("这是 else 语句");
+      }
+   }
+}
 
+//switch
+public class Test {
+   public static void main(String args[]){
+      char grade = 'C'; 
+      switch(grade)
+      {
+         case 'A' :
+            System.out.println("优秀"); 
+            break;
+         case 'D' :
+            System.out.println("及格");
+         default :
+            System.out.println("未知等级");
+      }
+   }
+}
+```
 
+#### 基本类型的包装类
+```
+我们经常会遇到需要使用对象，而不是内置数据类型的情形(为了调用这个类型的某些通用方法)。Java 语言为每一个内置数据类型提供了对应的包装类
+在python中,int等不需要包装类,本身就是对象--python里一切皆对象,包括基本类型,它们可以直接调用自身的静态方法.
+而java里基本类型的很多静态方法都存在其包装类当中,必须调用其包装类才能使用它们.
 
+基本类型      包装类
+byte          java.lang.Byte
+short         java.lang.Short
+int           java.lang.Integer
+long          java.lang.Long
+float         java.lang.Float
+double        java.lang.Double
+boolean       java.lang.Boolean
+char          java.lang.Character
+```
 
-
+#### 
 
 
 
