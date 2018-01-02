@@ -653,6 +653,7 @@ public class Test {
 我们经常会遇到需要使用对象，而不是内置数据类型的情形(为了调用这个类型的某些通用方法)。Java 语言为每一个内置数据类型提供了对应的包装类
 在python中,int等不需要包装类,本身就是对象--python里一切皆对象,包括基本类型,它们可以直接调用自身的静态方法.
 而java里基本类型的很多静态方法都存在其包装类当中,必须调用其包装类才能使用它们.
+**java里提供包装类这个东西,是为了使基本类型也可以类似python里那样直接当成对象来使用了 !!
 
 基本类型      包装类
 byte          java.lang.Byte
@@ -664,16 +665,75 @@ double        java.lang.Double
 boolean       java.lang.Boolean
 char          java.lang.Character
 ```
+```
+//所有的数字类型的包装类（Integer、Long、Byte、Double、Float、Short）都是抽象类 Number 的子类。
+//自动拆装箱(就是支持基本类型和其包装类的自动转换,在后起的python/ruby等语言中,这个都是不屑一提的功能了...)：
+public class Test{
+   public static void main(String args[]){
+      Integer x = 5;    // 装箱
+      x =  x + 10;      // 拆箱
+      System.out.println(x); 
+   }
+}
+```
 
-#### 
+#### 几个常用包装类相关的静态方法
+```java
+//Java 的 Math 包含了用于执行基本数学运算的属性和方法，如初等指数、对数、平方根和三角函数.Math 的方法都被定义为 static 形式，通过 Math 类可以在主函数中直接调用。
+Math.sin(Math.PI/2);  
+
+//Number子类
+Integer x = 5;   //即使使用int a = 5; a也可以直接调用Interger类的各种方法,因为有'自动拆装箱嘛',
+x.toString();    //自动拆装箱的作用就体现在这里:使得int和Integer类的使用一致,感觉不到切换("int也是对象了").
+x.abs();         //从原理上解释,java是通过'自动拆装箱'来做的,从使用上来说,你感觉不到切换,感觉和使用python的int对象效果一样了.
+x =  x + 10;
+
+//Character类
+Character ch = new Character('a');   // char ch = 'a';
+ch.toUpperCase()
+
+//
+
+```
+
+#### String和StringBuilder/Stringbuffer类
+```java
+//在 Java 中字符串属于对象，Java 提供了 String 类来创建和操作字符串。
+//String类的简易写法会使你误以为String是java的基本类型呢...其实是在使用String类,且String类是不可变类型(和python的string不可变原理一样)
+//修改字符串变量只是修改该变量指向不同的字符串对象而已,而不是修改该字符串对象本身.
+String greeting = "runoob";
+String helloString = new String({ 'r', 'u', 'n', 'o', 'o', 'b'}); 
+greeting = "haha";
+greeting.length();
+//String.format()
+fs = String.format("浮点型变量的值为 " +
+                   "%f, 整型变量的值为 " +
+                   " %d, 字符串变量的值为 " +
+                   " %s", floatVar, intVar, stringVar);
+
+//StringBuilder类型是String的增强版,是可变的!
+//StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象。
+//StringBuilder 类和 StringBuffer 的最大不同在于 StringBuilder 的方法不是线程安全的（不能同步访问）。
+//由于 StringBuilder 相较于 StringBuffer 有速度优势，所以多数情况下建议使用 StringBuilder 类。
+//然而在应用程序要求线程安全的情况下，则必须使用 StringBuffer 类。
+public class Test{
+  public static void main(String args[]){
+    StringBuffer sBuffer = new StringBuffer("菜鸟教程官网：");
+    sBuffer.append("www");
+    sBuffer.append(".runoob");
+    sBuffer.append(".com");
+    System.out.println(sBuffer);  
+  }
+}
+```
+
+## java数组/字典/java常用的数据容器类(它们都在java.util包里面,一般直接import java.util.* )
+```java
 
 
 
 
-
-
-
-
+```
 
 
 
