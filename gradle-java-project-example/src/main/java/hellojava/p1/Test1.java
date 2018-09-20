@@ -1,4 +1,4 @@
-package pkg1;
+package hellojava.p1;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class Test1{
     public void xyz(){
-        System.out.print("");
+        System.out.print("......");
     }
     
     public void zyx() {

@@ -1,4 +1,4 @@
-package pkg2;
+package hellojava.p2;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -8,7 +8,7 @@ public class Test2 {
         HashMap map = new HashMap();
         LinkedList l = new LinkedList();
         
-        System.out.print("... from pkg2 ...");
+        System.out.print("......");
     }
 }
 
