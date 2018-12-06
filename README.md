@@ -1,9 +1,9 @@
-#### java OOP .VS. python OOP (基本一样)
+## java OOP .VS. python OOP (基本一样)
 -----------------------------------------------------------------------
       *其实java和python的思想和语法在理解上是基本一样的,只是具体的写法'稍有不同'而已
       *java和python对比学习,思想相通,语法上写法稍微不同而已,语言层面的差别并不大
       *但二者各有自己的一套语言生态,包含web开发的一系列框架工具等需要花费时间熟悉
-      *(需要一本类似'python参考手册'的java教程, 是啥?)
+      *(需要一本类似'python参考手册'的经典java教程, 是啥?)
 -----------------------------------------------------------------------
 
 [java菜鸟教程](http://www.runoob.com/java/java-modifier-types.html)     
@@ -40,31 +40,31 @@ public class HelloWorld {
     private:           y             n              n           n
 ```
 1.java/python/go访问权限对比:
-python通过加__来控制访问权限,go通过大小写来控制访问权限,
-python和go相当于只使用java的public/private这2个访问权限的控制(因为default/protected没必要/基本用不到...)
-写代码的时候基本只用到public/private而已.
-你想它能被外部访问,就用public,你想它只在class内部私有,就用private,使用场景足以.
+python通过加__来控制访问权限,go通过首字母大小写来控制访问权限,
+python和go相当于只使用java的public/private这2个访问权限的控制(default/protected基本用不到...)
+写代码的时候基本只用到public/private而已,要么允许被访问,要么不允许访问,就这么简单.使用场景足以.
 
-*从这一点上说,java的4种访问权限控制符可以简化下-简单实用最重要啊!
-*在python和go里只需要使用puclic/private 2种访问权限就足够了!
+*从这一点上说,java的4种访问权限控制符设计的多余了-写代码简单实用最重要啊!
+*在python和go里只需要使用puclic/private 2种访问权限就足够了!也没见不够用的场景...
 
-2.java/python 静态变量/静态方法 对比,区分与 实例变量/实例方法:
-java在变量/方法前加 static修饰符 的就是静态变量/静态方法,
-python没有self.的就是静态变量,加@staticmethod装饰器就是静态方法,python还有个@classmethod
+2.java/python 静态变量/静态方法 vs 实例变量/实例方法:
+java在变量/方法前加static修饰符的就是静态变量/静态方法,
+python没有self.的就是静态变量,加@staticmethod装饰器就是静态方法,python还有个@classmethod装饰器.
 (注:java里静态方法就是类方法,python里静态方法和类方法不一样(类方法多了个cls参数))
 ```
 
 ```
-java的类(外部类)只有2种访问权限:
-public/default(就是说类前面要么加public修饰,要么什么都不加)
+java的类只有2种访问权限:
+public/default(就是说类前面要么加public修饰,要么什么都不加默认为default)
 
 java的变量和方法有4种访问权限：
 public/default/protected/private, 但常用2种(public/private)
 ```
 
 ```
-java繁杂冗余的语法的需要简化,以简洁实用为目的.
-kotlin/scala的设计出发点就是为了使java的语法更简洁实用吧...
+吐槽一下:
+java繁杂冗余的语法需要简化,应该以简洁实用为目的...
+显然kotlin/scala的设计出发点就是为了使java的语法更简洁实用吧...
 ```
 
 #### 构造方法
@@ -96,7 +96,7 @@ Puppy p2 = new Puppy("haha");
     import java.io.*;
 
 #### 8种基本类型
-*Java语言提供了八种基本类型.六种数字类型（四个整数型,两个浮点型）,一种字符类型,还有一种布尔型*
+*Java语言提供了八种基本类型: 四个整型,两个浮点型,一种字符型,一种布尔型*
 ```java
 byte:  (包装类:java.lang.Byte)
     byte 数据类型是8位/有符号的,以二进制补码表示的整数；
@@ -152,12 +152,12 @@ char:  (包装类:java.lang.Character)
     char 数据类型可以储存任何字符；
     例子:char letter = 'A';.
 void:
-实际上,JAVA中还存在另外一种基本类型void,它也有对应的包装类 java.lang.Void,不过我们无法直接对它们进行操作.    
+JAVA中还存在另外一种基本类型void,它也有对应的包装类 java.lang.Void,不过我们无法直接对它们进行操作.    
 ```
 
-#### 引用数据类型
+#### 引用数据类型: 类和对象
 ```
-在Java中,引用类型的变量非常类似于C/C++的指针.
+java的引用数据类型其实指的就是 类创建出的对象! 像String/ArrayList/Book等等对象,都是引用类型.
 引用类型指向一个对象,指向对象的变量是引用变量.这些变量在声明时被指定为一个特定的类型,比如 Employee/Puppy 等.变量一旦声明后,类型就不能被改变了.
 对象/数组都是引用数据类型.
 所有引用类型的默认值都是null.
@@ -203,19 +203,20 @@ public class QiangZhiZhuanHuan{
 
 #### Java 局部变量
 ```java
-//局部变量声明在方法/构造方法或者语句块中；
-//局部变量在方法/构造方法/或者语句块被执行的时候创建,当它们执行完成后,变量将会被销毁；
-//访问修饰符不能用于局部变量；
-//局部变量只在声明它的方法/构造方法或者语句块中可见；
+//局部变量声明在函数中；
+//局部变量在函数执行的时候创建,当它们执行完成后,变量将会被销毁；
+//访问修饰符不能用于局部变量,修饰符修饰的变量或者函数的可见性是针对包级别的!
 //局部变量是在栈上分配的.
 //局部变量没有默认值,所以局部变量被声明后,必须经过初始化,才可以使用.
 package com.runoob.test;
+
 public class Test{ 
    public void pupAge(){
       int age = 0;
       age = age + 7;
       System.out.println("小狗的年龄是: " + age);
    }
+
    public static void main(String args[]){
       Test test = new Test();
       test.pupAge();
@@ -225,30 +226,28 @@ public class Test{
 
 #### 实例变量
 ```java
-// 实例变量声明在一个类中,但在方法/构造方法和语句块之外；
-// 当一个对象被实例化之后,每个实例变量的值就跟着确定；
+// 实例变量的声明在一个类中,但在方法之外,实例变量值可以在声明时指定,也可以在构造方法中指定；
 // 实例变量在对象创建的时候创建,在对象被销毁的时候销毁；
-// 实例变量的值应该至少被一个方法/构造方法或者语句块引用,使得外部能够通过这些方式获取实例变量信息；
-// 实例变量可以声明在使用前或者使用后；
 // 访问修饰符可以修饰实例变量；
-// 实例变量对于类中的方法/构造方法或者语句块是可见的.一般情况下应该把实例变量设为私有.
-// 实例变量值可以在声明时指定,也可以在构造方法中指定；
-// 实例变量可以直接通过变量名访问.但在静态方法以及其他类中,就应该使用完全限定名:Obeject.VariableName.
+// 实例变量对于类中的方法是可见的.一般情况下应该把实例变量设为私有.
+// 应该使用this.来引用实例变量,而不是在方法中直接访问,java的this和python的self一样.
 import java.io.*;
 public class Employee{
+
    // 这个实例变量对子类可见
    public String name;
    // 私有变量,仅在该类可见
    private double salary;
+
    public Employee (String empName){
-      name = empName;
+      this.name = empName;
    }
    public void setSalary(double empSal){
-      salary = empSal;
+      this.salary = empSal;
    }  
    public void printEmp(){
-      System.out.println("名字 : " + name );
-      System.out.println("薪水 : " + salary);
+      System.out.println("名字 : " + this.name);
+      System.out.println("薪水 : " + this.salary);
    }
    public static void main(String args[]){
       Employee empOne = new Employee("RUNOOB");
@@ -260,29 +259,32 @@ public class Employee{
 
 #### 类变量 == 静态变量
 ```java
-// 类变量也称为静态变量,在类中以static关键字声明,但必须在方法构造方法和语句块之外.
+// 类变量也称静态变量,在类中以static关键字声明在方法之外.
 // 无论一个类创建了多少个对象,类只拥有类变量的一份拷贝.
 // 静态变量除了被声明为常量外很少使用.常量是指声明为public/private,final和static类型的变量.
 // 静态变量储存在静态存储区.经常被声明为常量,很少单独使用static声明变量.
-// 静态变量在程序开始时创建,在程序结束时销毁.
+// 静态变量在整个程序开始时创建,在程序结束时销毁.
 // 与实例变量具有相似的可见性.但为了对类的使用者可见,大多数静态变量声明为public类型.
-// 变量的值可以在声明的时候指定,也可以在构造方法中指定.此外,静态变量还可以在静态语句块中初始化.
-// 静态变量可以通过: ClassName.VariableName的方式访问.
+// 变量的值可以在声明的时候指定,也可以在构造方法中指定.
+// 静态变量应该通过ClassName.VariableName的方式访问.
 import java.io.*;
+
 public class Employee {
     //salary是静态的私有变量
     private static double salary;
+
     // DEPARTMENT是一个常量
     public static final String DEPARTMENT = "开发人员";
+
     public static void main(String args[]){
-    salary = 10000;
-        System.out.println(DEPARTMENT+"平均工资:"+salary);
+        salary = 10000;
+        System.out.println(DEPARTMENT + "平均工资:" + salary);
     }
 }
 ```
 
 #### Java 访问控制修饰符
-    Java中,可以使用访问控制符来保护对类/变量/方法的访问.Javav支持 4 种不同的访问权限.
+    Java中,可以使用访问控制符来保护对类/变量/方法的访问.Java支持4种不同的访问权限.
         default (即缺省,什么也不写）: 在同一包内可见,不使用任何修饰符.使用对象:类/接口/变量/方法.
         private : 在同一类内可见.使用对象:变量/方法. 注意:不能修饰类（外部类）
         public : 对所有类可见.使用对象:类/接口/变量/方法
@@ -306,7 +308,7 @@ public class Logger {
 为了使其他类能够操作该变量,定义了两个 public 方法:getFormat() （返回 format的值）和 setFormat(String)（设置 format 的值）
 ```
 
-####　公有访问修饰符-public
+#### 公有访问修饰符-public
 ```java
 被声明为 public 的类/方法/构造方法和接口能够被任何其他类访问.
 如果几个相互访问的 public 类分布在不同的包中,则需要导入相应 public 类所在的包.
@@ -337,12 +339,11 @@ class StreamingAudioPlayer extends AudioPlayer {
 **如果我们只想让该方法对其所在类的子类可见,则将该方法声明为 protected.**
 ```
 
-#### 访问控制和继承
+#### 访问控制符的继承
     请注意以下方法继承的规则：
     父类中声明为 public 的方法在子类中也必须为 public。
     父类中声明为 protected 的方法在子类中要么声明为 protected，要么声明为 public，不能声明为 private。
     父类中声明为 private 的方法，不能够被继承。
-
 
 #### 非访问修饰符
     static 修饰符，用来修饰类方法和类变量。
@@ -350,7 +351,7 @@ class StreamingAudioPlayer extends AudioPlayer {
     abstract 修饰符，用来创建抽象类和抽象方法。
     synchronized 和 volatile 修饰符，主要用于线程的编程。
 
-#### static 修饰符
+#### static修饰符
     静态变量：
         static关键字用来声明独立于对象的静态变量，无论一个类实例化多少对象，它的静态变量只有一份拷贝。 静态变量也被称为类变量。局部变量不能被声明为 static 变量。
     静态方法：
@@ -448,7 +449,7 @@ class SubClass extends SuperClass{
 }
 ```
 
-#### synchronized 修饰符
+#### synchronized修饰符
 ```
 synchronized 关键字声明的方法同一时间只能被一个线程访问。synchronized 修饰符可以应用于四个访问修饰符。
 public synchronized void showDetails(){
@@ -456,7 +457,7 @@ public synchronized void showDetails(){
 }
 ```
 
-#### transient 修饰符
+#### transient修饰符
 ```
 序列化的对象包含被 transient 修饰的实例变量时，java 虚拟机(JVM)跳过该特定的变量。
 该修饰符包含在定义变量的语句中，用来预处理类和变量的数据类型。
@@ -464,7 +465,7 @@ public transient int limit = 55;   // 不会持久化
 public int b; // 持久化
 ```
 
-#### volatile 修饰符
+#### volatile修饰符
 ```
 volatile 修饰的成员变量在每次被线程访问时，都强制从共享内存中重新读取该成员变量的值。
 而且，当成员变量发生变化时，会强制线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。
@@ -490,20 +491,20 @@ public class MyRunnable implements Runnable
 但是以上代码中我们使用了 volatile 修饰 active，所以该循环会停止。
 ```
 
-#### 三元运算符 ?:
+#### 三元运算符 ? :
 ```java
 a = 10;
 b = (a == 1) ? 20 : 30;  // 如果 a 等于 1 成立，则设置 b 为 20，否则为 30
 ```
 
-#### instanceof 运算符
+#### instanceof运算符
 ```java
 //该运算符用于操作对象实例，检查该对象是否是一个特定类型（类类型或接口类型）。
 Vehicle a = new Car();
 boolean result =  a instanceof Car;
 ```
 
-#### 循环判断语句
+#### 循环语句
 ```java
 // while
 public class Test {
@@ -586,7 +587,7 @@ public class Test {
 }
 ```
 
-#### 基本类型的包装类
+#### 8种基本数据类型的包装类
 ```
 我们经常会遇到需要使用对象，而不是内置数据类型的情形(为了调用这个类型的某些通用方法)。Java 语言为每一个内置数据类型提供了对应的包装类
 在python中,int等不需要包装类,本身就是对象--python里一切皆对象,包括基本类型,它们可以直接调用自身的静态方法.
@@ -665,7 +666,8 @@ public class Test{
 }
 ```
 
-# java常用的容器类(它们都在java.util包里面,一般直接import java.util.* )
+# java常用的复合数据类型/容器类(它们都在java.util包里面,一般直接import java.util.* )
+
 ## 数组
 ```java
 //数组是用来存储固定大小的同类型元素
@@ -709,10 +711,18 @@ java.util.Arrays类能方便地操作数组，它提供的所有方法都是静�
 */
 ```
 
+## ArrayList
+```java
+//
+```
+
 ## Map
 ```java
 // 常用HashMap
 ```
+
+
+# jdk的常用类介绍
 
 ## Date类
 ```java
@@ -844,7 +854,7 @@ public class RegexMatches
 }
 ```
 
-## java方法的定义
+## java方法定义
 ```java
 修饰符 返回值类型 方法名(参数类型 参数名){
     ...
@@ -887,14 +897,14 @@ public class VarargsDemo {
 }
 ```
 
-## Java 流(Stream), 文件(File)和IO
+## java 文本IO/二进制IO/Java流(Stream)
 ```java
 
 
 
 ```
 
-
+## ...
 
 
 
