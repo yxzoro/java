@@ -666,7 +666,8 @@ public class Test{
 }
 ```
 
-# java常用的复合数据类型/容器类(它们都在java.util包里面,一般直接import java.util.* )
+# java常用的复合数据类型/容器类
+*它们都在java.util包里面,一般直接import java.util.**
 
 ## 数组
 ```java
