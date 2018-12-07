@@ -1,0 +1,24 @@
+plugins {
+    id 'war'  
+    id 'org.gretty' version '2.2.0'
+    // The gretty plugin adds tasks to the application, for running or testing in Jetty or Tomcat environments. 
+
+    // you can build and deploy the app to the default (Jetty) container by using the appRun task.
+    // ./gradlew appRun
+    // You can now access the web app at http://localhost:8080/javaweb 
+
+    // You can also build a war file by the build task.
+    // ./gradlew build
+}
+
+repositories {
+    jcenter()
+
+}
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0' 
+    testCompile 'junit:junit:4.12'
+
+}
+
