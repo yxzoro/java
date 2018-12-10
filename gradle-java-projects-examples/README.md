@@ -24,5 +24,10 @@ java -jar xx.jar
 -------------------------------------------
 
 ## gradle/gradlew usage, build.gradle file
+```
+gradlew: 其实就是gradle wrapper,好处就是不需要安装gradle,项目中自带gradlew的jar包,可直接运行使用,很方便.
+gradlew tasks: 显示可执行的task,每个项目都会有自定义的task,如play的appRun和sprintboot的bootRun.
+
+```
 
 -------------------------------------------
