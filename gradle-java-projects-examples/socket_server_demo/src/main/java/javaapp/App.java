@@ -2,13 +2,13 @@ package javaapp;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Date;
