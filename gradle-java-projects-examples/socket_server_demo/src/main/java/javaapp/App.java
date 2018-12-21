@@ -24,6 +24,7 @@ public class App{
             System.out.println("Server socket started at :18000.");
             // use threadpool to handle connections            
             while (true) {
+                System.out.println("Main thread is waiting for new connection...");
                 Socket client_socket = server_socket.accept();
                 System.out.println("=> connected with " +client_socket.toString());
                 // submit a connection to threadpool
@@ -49,6 +50,7 @@ class WorkerThread implements Runnable {
     @Override
     public void run() {        
         try {
+            System.out.println("create a new thread for " + this.sock.toString());
             // read data from InputStream to byte[], then convert byte[] to string.
             byte[] buffer = new byte[1024];
             this.sock.getInputStream().read(buffer);
