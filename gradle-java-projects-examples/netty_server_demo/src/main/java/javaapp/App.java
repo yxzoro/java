@@ -6,6 +6,7 @@ package javaapp;
 import javaapp.DiscardServer;
 import javaapp.EchoServer;
 import javaapp.HttpServer;
+import javaapp.TimeServer;
 
 
 public class App{
@@ -16,6 +17,7 @@ public class App{
         // new DiscardServer(port).run();
         // new EchoServer(port).run();
         new HttpServer(port).run();
+        // new TimeServer(port).run();
 
     }
 
