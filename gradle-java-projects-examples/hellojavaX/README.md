@@ -26,6 +26,10 @@ java hellojavaX/Main
 */
 ```
 
+## 依赖的jar包
+```
+项目依赖的jar包就放在jre的lib/ext/目录里就行了.
+```
 
 
 
