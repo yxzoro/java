@@ -1,5 +1,5 @@
 ## gradle-java-project-example
-## java有gradle在手,走遍天下都不怕...太TM好用了...
+## java有gradle在手...太TM好用了...
 
 #### init an java application/library/webapp project using gradle
 ```
