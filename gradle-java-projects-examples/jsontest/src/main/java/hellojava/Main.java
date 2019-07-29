@@ -68,8 +68,21 @@ public class Main{
         System.out.println(status);
         System.out.println(aggFuncs);
         System.out.println(metrics);
-        
+
 		System.out.println("\nend");
+
+
+		// java set operator:
+		HashSet<String> s1 = new HashSet<String>();
+		HashSet<String> s2 = new HashSet<String>();
+		s1.add("a");s1.add("b");s2.add("a");		
+		HashSet<String> s3 = new HashSet<String>();
+		for (String s: s2) {s3.add(s);}
+		s3.removeAll(s1);
+		System.out.println(s3.isEmpty());		
+		System.out.println(s2.isEmpty());		
+		System.out.println(s3);		
+		System.out.println(s2);		
     }
 }
 
