@@ -10,7 +10,7 @@ import java.net.Socket;
 
 // --------------------------------------------------------------
 // use this socket logger to debug java code when multi machines
-public class Logger {
+public class SocketLogger {
 
     public Socket socket = null;
 
