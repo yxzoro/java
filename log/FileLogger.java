@@ -1,17 +1,9 @@
-package compute;
 
 import java.util.logging.*;
 import java.io.*;
 
-public class FileLogger {        
-        
-        public Logger logger;
 
-        public log(object o) {
-            logger.info(o);
-        }
-
-        FileLogger() {
+        public void InitFileLogger() {
             this.logger = Logger.getLogger("flink");
             FileHandler fh = new FileHandler("/tmp/flink.log");
             fh.setFormatter(new SimpleFormatter());
@@ -21,7 +13,6 @@ public class FileLogger {
         public static String getStackTrace(Throwable throwable) {
                 StringWriter sw = new StringWriter();
                 PrintWriter pw = new PrintWriter(sw);
-
                 try {
                     throwable.printStackTrace(pw);
                     return sw.toString();
@@ -30,7 +21,7 @@ public class FileLogger {
                     pw.close();
                 }
         }
-}
+
 
 
 
