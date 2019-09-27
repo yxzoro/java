@@ -1,4 +1,4 @@
-package hellojavaX.p1;
+package hellojava.p1;
 
 import java.util.HashMap;
 import java.util.LinkedList;

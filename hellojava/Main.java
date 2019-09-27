@@ -1,7 +1,7 @@
-package hellojavaX;
+package hellojava;
 
-import hellojavaX.p1.Test1;
-import hellojavaX.p2.Test2;
+import hellojava.p1.Test1;
+import hellojava.p2.Test2;
 
 import java.util.HashMap;
 
