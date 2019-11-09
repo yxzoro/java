@@ -24,6 +24,7 @@ public class HelloWorld {
 #### set JAVA_HOME, PATH, CLASSPATH
     classpath变量: 引用第三方类的寻找路径
     classpath=.;%JAVA_HOME%\lib;%JAVA_HOME%\jre\lib;
+    (技巧: java -cp "libs/*" 可以指定使用文件夹下的所有jar包,而不需要一个个写...)
 
 #### some notes:
     1.任何一个Java程序可以认为是一系列对象的集合,而这些对象通过调用彼此的方法来协同工作,java是完全面向对象的.
