@@ -16,9 +16,11 @@ gradle init (then choose a type)
 gradle/gradlew build
 ```
 
-#### use your jar/war file
+#### run your jar/war file
 ```
-java -jar xx.jar
+gradle run (gradle version >= 6.6)
+或
+java -jar xx.jar -cp 包路径
 ```
 
 -------------------------------------------
