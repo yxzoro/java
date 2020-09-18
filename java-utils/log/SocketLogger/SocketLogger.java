@@ -14,6 +14,7 @@ public class SocketLogger {
 
     public Socket socket = null;
 
+    // 打印str
     public void log(String str) {
         try {
             if (this.socket == null) {
@@ -29,6 +30,20 @@ public class SocketLogger {
             this.close();
         }        
     }
+    
+    // 打印异常调用栈
+    public void logException(Exception e) {
+            try {
+                StringWriter sw = new StringWriter();
+                PrintWriter pw = new PrintWriter(sw);
+                e.printStackTrace(pw);
+                String str = sw.toString();
+                DataOutputStream out = new DataOutputStream(this.socket.getOutputStream());  
+                out.writeUTF(str);
+            } catch (Exception e) {
+                System.out.println("logger socket error");
+            }           
+        }
     
      public void close() {
          this.socket.close(); 
