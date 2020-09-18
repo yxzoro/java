@@ -40,7 +40,7 @@ public class SocketLogger {
                 String str = sw.toString();
                 DataOutputStream out = new DataOutputStream(this.socket.getOutputStream());  
                 out.writeUTF(str);
-            } catch (Exception e) {
+            } catch (Exception ee) {
                 System.out.println("logger socket error");
             }           
         }
