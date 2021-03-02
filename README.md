@@ -21,10 +21,15 @@ public class HelloWorld {
 // java HelloWorld
 ```
 
-#### set JAVA_HOME, PATH, CLASSPATH
-    classpath变量: 引用第三方类的寻找路径
-    classpath=.;%JAVA_HOME%\lib;%JAVA_HOME%\jre\lib;
-    (技巧: java -cp "libs/*" 可以指定使用文件夹下的所有jar包,而不需要一个个写...)
+#### 设置环境变量JAVA_HOME/JRE_HOME/CLASSPATH
+    classpath变量: 引用第三方类的寻找路径     
+    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk     
+    export JRE_HOME=$JAVA_HOME/jre     
+    export classpath=.;%JAVA_HOME%\lib;%JAVA_HOME%\jre\lib;     
+    
+## 关于指定jar包路径问题, 已经被坑过无数次了! 草
+- 方式一：使用java -cp "libs/*"  可以指定引用文件夹下的所有jar包,但是有时候会失效! -cp不能和-jar一起连用?
+- 方式二：使用java -Djava.ext.dirs="jpython_libs/" -jar jython-standalone-2.7.2.jar test.py  这个才是正确的姿势?一直有效
 
 #### some notes:
     1.任何一个Java程序可以认为是一系列对象的集合,而这些对象通过调用彼此的方法来协同工作,java是完全面向对象的.
