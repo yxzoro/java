@@ -8,6 +8,9 @@
 
 [java菜鸟教程](http://www.runoob.com/java/java-modifier-types.html)     
 
+---
+# 写java一定要使用gradle构建项目！！省去各种麻烦！！
+---
 
 #### hello world
 ```java
