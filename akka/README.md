@@ -18,5 +18,6 @@ This provides a rich model to simulate real-world objects that are loosely-coupl
 ```
 
 ```
-java中基于actor模式的AKKA框架,以及基于AKKA的web框架play.
+java中基于actor模式的AKKA框架,以及基于AKKA的web框架play,
+flink底层的分布式也是使用的akka写的。
 ```
