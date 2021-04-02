@@ -10,13 +10,15 @@
   <mime-type>application/x-msi</mime-type>
   </mime-mapping>
 
- <filter>
+
+  <filter>
     <filter-name>MyFilter</filter-name>
-    <filter-class>abc.Dodo</filter-class>
+    <filter-class>abc.MyFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>MyFilter</filter-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/myfilter/*</url-pattern>
   </filter-mapping>
+
 
 </web-app>
