@@ -22,6 +22,11 @@ repositories {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/com.mchange/c3p0
+    implementation group: 'com.mchange', name: 'c3p0', version: '0.9.5.5'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '5.1.49'
+
     // This dependency is found on compile classpath of this component and consumers.
     implementation 'com.google.guava:guava:26.0-jre'
 
