@@ -33,3 +33,22 @@ gradlew tasks: 显示可执行的task,每个项目都会有自定义的task,例�
 ```
 
 -------------------------------------------
+
+## gradle设置全局代理
+````
+# ~/.gradle/gradle.properties
+systemProp.http.proxyHost=10.191.113.100
+systemProp.http.proxyPort=8002
+systemProp.http.nonProxyHosts=192.168.*|localhost
+systemProp.http.proxyUser=xxx
+systemProp.http.proxyPassword=xxx
+
+systemProp.https.proxyHost=10.191.113.100
+systemProp.https.proxyPort=8002
+systemProp.https.nonProxyHosts=192.168.*|localhost
+systemProp.https.proxyUser=xxx
+systemProp.https.proxyPassword=xxx
+```
+
+
+
