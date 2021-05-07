@@ -35,8 +35,9 @@ gradlew tasks: 显示可执行的task,每个项目都会有自定义的task,例�
 -------------------------------------------
 
 ## gradle设置全局代理
-````
-# ~/.gradle/gradle.properties
+```
+# gradle启动时就是个java程序在运行,没有识别http_proxy环境变量,
+# 需要专门设置下~/.gradle/gradle.properties文件
 systemProp.http.proxyHost=10.191.113.100
 systemProp.http.proxyPort=8002
 systemProp.http.nonProxyHosts=192.168.*|localhost
