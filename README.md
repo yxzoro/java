@@ -1,5 +1,11 @@
 ---
 ## 写java一定要使用gradlew构建项目！！省去各种麻烦！！草
+
+## 关于指定jar包路径问题, 已经被坑过无数次了! 草
+- 方式一：使用java -cp "libs/*"  可以指定引用文件夹下的所有jar包,但是有时候会失效! -cp不能和-jar一起连用?
+- 方式二：使用java -Djava.ext.dirs="jpython_libs/" -jar jython-standalone-2.7.2.jar test.py  这个才是正确的姿势?一直有效
+- 参考 [java -cp和-Djava.ext.dirs](https://blog.csdn.net/zhuying_linux/article/details/7714194)
+(jar包实际上就是.class文件的压缩包,jvm会自动解压jar里的目录来加载.class文件,lib/和class/的作用其实一样)
 ---
 
 ## java VS python /面向对象/思路相通
@@ -28,12 +34,6 @@ public class HelloWorld {
     export JRE_HOME=$JAVA_HOME/jre     
     export classpath=.;%JAVA_HOME%\lib;%JAVA_HOME%\jre\lib;     
     
-## 关于指定jar包路径问题, 已经被坑过无数次了! 草
-- 方式一：使用java -cp "libs/*"  可以指定引用文件夹下的所有jar包,但是有时候会失效! -cp不能和-jar一起连用?
-- 方式二：使用java -Djava.ext.dirs="jpython_libs/" -jar jython-standalone-2.7.2.jar test.py  这个才是正确的姿势?一直有效
-- 参考[java -cp和-Djava.ext.dirs](https://blog.csdn.net/zhuying_linux/article/details/7714194)
-(jar包实际上就是.class文件的压缩包,jvm会自动解压jar里的目录来加载.class文件,lib/和class/的作用其实一样)
-
 #### 几个要点
     1.任何一个Java程序可以认为是一系列对象的集合,而这些对象通过调用彼此的方法来协同工作,java是完全面向对象的.
     2.所有的类名的首字母应该大写.如果类名由若干单词组成,那么每个单词的首字母应该大写,例如MyFirstJavaClass
