@@ -15,7 +15,11 @@ web框架原理都类似,替你写好了很多轮子代码而已.
 
 ## jetty踩坑
 jetty9.4是不支持识别@WebServlet装饰器的,所以url没有正确映射。
-所以jetty9.4必须使用web.xml方式去配置url ?
+所以jetty9.4必须使用web.xml方式去配置url ?? 草
 tomcat8.5没有问题。
 
+## jetty部署servlet项目
+- 拷贝项目目录到webapps/
+- 配置jetty安装目录下的start.ini
+- 启动jetty,查看url
 
