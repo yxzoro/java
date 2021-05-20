@@ -28,3 +28,14 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
+
+/* 可以将所有依懒打包到一个jar包里
+jar {
+    from {
+        //configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtime.collect{zipTree(it)}
+    }
+}
+*/
+
+
