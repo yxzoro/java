@@ -1,8 +1,7 @@
-// add logger in your class to log to file
-
 import java.util.logging.*;
 import java.io.*;
 
+// SimpleLogger.java
 public static class KafkaSplitter extends RichFlatMapFunction<ObjectNode, Tuple7<String, String, String, String, String, String, String>> {
 
         public Logger logger;
